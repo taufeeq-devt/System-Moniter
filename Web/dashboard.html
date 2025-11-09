@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>System Monitor Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<header>System Monitor Dashboard</header>
+
+<div class="metrics">
+  <div class="metric-box">
+    <h3>CPU Usage</h3>
+    <canvas id="cpuGauge" width="180" height="180"></canvas>
+    <div class="bar"><div id="cpuBar" class="bar-fill"></div></div>
+    <p id="cpuText">0%</p>
+  </div>
+
+  <div class="metric-box">
+    <h3>Memory Usage</h3>
+    <canvas id="memGauge" width="180" height="180"></canvas>
+    <div class="bar"><div id="memBar" class="bar-fill"></div></div>
+    <p id="memText">0%</p>
+  </div>
+
+  <div class="metric-box">
+    <h3>System Uptime</h3>
+    <p id="uptimeText" style="font-size:20px;">0h 0m</p>
+  </div>
+</div>
+
+<h2 style="text-align:center;">CPU Usage History</h2>
+<div style="width:80%;margin:0 auto;">
+  <canvas id="cpuChart" height="100"></canvas>
+</div>
+
+<div class="kill-section">
+  <input type="number" id="pidInput" class="kill-input" placeholder="Enter PID">
+  <button class="kill-confirm" onclick="manualKill()">Kill PID</button>
+</div>
+
+<h2 style="text-align:center;">Running Processes</h2>
+  <table id="procTable">
+  <thead>
+    <tr>
+      <th>PID</th>
+      <th>Process Name</th>
+      <th>CPU (s)</th>
+      <th>MEM (MB)</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+  new QWebChannel(qt.webChannelTransport, channel => {
+    alert("WebChannel connected!");
+  });
+</script>
+</body>
+</html>

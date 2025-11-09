@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #101820, #1a2a3a);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 28px;
+  color: #4fc3f7;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.metric-box {
+  background: #182634;
+  border-radius: 12px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.bar {
+  height: 18px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4fc3f7, #81d4fa);
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+canvas {
+  background: #182634;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  margin: 20px auto;
+  display: block;
+}
+
+#procTable {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+#procTable th, #procTable td {
+  border: 1px solid #444;
+  padding: 8px;
+  text-align: left;
+}
+
+#procTable th {
+  background-color: #263238;
+}
+
+.kill-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.kill-btn:hover {
+  background: #e53935;
+}
+
+.kill-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.kill-input {
+  padding: 6px;
+  width: 120px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.kill-confirm {
+  background: #4fc3f7;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.kill-confirm:hover {
+  background: #03a9f4;
+}
