@@ -1,7 +1,5 @@
 # System Monitor
 
-
-
 ## Overview
 The **System Monitor** is a real-time system monitoring application built using **C++ (Qt Framework)** with an interactive **HTML, CSS, and JavaScript** dashboard interface.  
 It provides live updates of CPU usage, memory consumption, system uptime, and active processes — similar to the Linux `top` command but with a modern graphical interface.
@@ -14,9 +12,6 @@ The backend (C++/Qt) communicates with the frontend via **Qt WebEngine** and **Q
 
 - **Real-Time Monitoring**  
   Displays continuously updating system metrics such as CPU load, memory usage, and uptime.
-
-- **Interactive Dashboard**  
-  Modern responsive web-based interface with animated gauges, charts, and data tables.
 
 - **Process Management**  
   Lists active processes with PID, name, CPU usage, and memory usage.
@@ -71,42 +66,27 @@ System-Monitor/
 Before building, ensure you have the following installed:
 
 ### On Ubuntu / Debian:
-```bash
+bash
 sudo apt update
 sudo apt install build-essential qtbase5-dev qtwebengine5-dev libqt5webchannel5-dev qt5-qmake -y
-On Fedora:
-bash
-Copy code
 sudo dnf install qt5-qtbase-devel qt5-qtwebengine-devel qt5-qtwebchannel-devel
-On Arch Linux:
-bash
-Copy code
 sudo pacman -S qt5-base qt5-webengine qt5-webchannel
-Build and Run Instructions
-Clone the repository
 
-bash
-Copy code
+
+###Build and Run Instructions
+Clone the repository
 git clone https://github.com/taufeeq-devt/System-Moniter.git
 cd System-Moniter
-Generate Makefile using qmake
-
-bash
-Copy code
+#Generate Makefile using qmake
 qmake system-monitor.pro
-Compile the project
-
-bash
-Copy code
+#Compile the project
 make
-Run the application
-
-bash
-Copy code
+#Run the application
 ./sm
 The application window will open with a live-updating dashboard showing CPU, memory, and process information.
 
-Functional Overview
+## Functional Overview
+
 Backend (src/sm.cpp)
 Collects system data through:
 
@@ -122,21 +102,16 @@ Provides this data to the frontend via Monitor (QObject) over a QWebChannel.
 
 Implements process termination using the SIGKILL signal.
 
-Frontend (web/)
+##Frontend (web/)
+
 Displays live charts and gauges using Chart.js.
 
 Dynamically updates data every few seconds using asynchronous JS calls.
 
 Includes a process table with inline “Kill” actions.
 
-Example Commands
-Action	Command
-Configure Build	qmake system-monitor.pro
-Compile	make
-Run	./sm
-Clean Build	make clean
+##System Requirements
 
-System Requirements
 Operating System: Linux (tested on Ubuntu 22.04)
 
 Qt Version: 5.12+ or Qt 6 equivalent
@@ -147,7 +122,8 @@ RAM: Minimum 1 GB
 
 Compiler: GCC or Clang
 
-Future Enhancements
+##Future Enhancements
+
 Core-wise CPU and memory usage breakdown
 
 Disk and network utilization graphs
