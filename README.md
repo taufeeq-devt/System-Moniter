@@ -1,6 +1,6 @@
 # System Monitor
 
-![System Monitor Dashboard](assets/dashboard.png)
+
 
 ## Overview
 The **System Monitor** is a real-time system monitoring application built using **C++ (Qt Framework)** with an interactive **HTML, CSS, and JavaScript** dashboard interface.  
@@ -62,8 +62,7 @@ System-Monitor/
 └── assets/ # Images and icons
 └── dashboard.png # Project screenshot
 
-yaml
-Copy code
+
 
 ---
 
