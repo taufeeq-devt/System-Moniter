@@ -2,7 +2,7 @@
 
 ## Overview
 The **System Monitor** is a real-time system monitoring application built using **C++ (Qt Framework)** with an interactive **HTML, CSS, and JavaScript** dashboard interface.  
-It provides live updates of CPU usage, memory consumption, system uptime, and active processes — similar to the Linux `top` command but with a modern graphical interface.
+It provides live updates of CPU usage, memory consumption, system uptime, and active processes also provides it kill by entering PID — similar to the Linux `top` command but with a modern graphical interface.
 
 The backend (C++/Qt) communicates with the frontend via **Qt WebEngine** and **Qt WebChannel**, allowing real-time data exchange and dynamic UI updates.
 
@@ -67,12 +67,12 @@ The backend (C++/Qt) communicates with the frontend via **Qt WebEngine** and **Q
 ## Dependencies
 Before building, ensure you have the following installed:
 ### On Ubuntu / Debian:
-bash
+```bash
 sudo apt update
 sudo apt install build-essential qtbase5-dev qtwebengine5-dev libqt5webchannel5-dev qt5-qmake -y
 sudo dnf install qt5-qtbase-devel qt5-qtwebengine-devel qt5-qtwebchannel-devel
 sudo pacman -S qt5-base qt5-webengine qt5-webchannel
-
+```
 ---
 
 ## Build and Run Instructions
