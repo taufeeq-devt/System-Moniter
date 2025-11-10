@@ -87,7 +87,7 @@ cd System-Moniter
 qmake system-monitor.pro
 ```
 
-//Compile the project:
+### Compile the project:
 ```bash
 make
 ```
