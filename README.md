@@ -1,4 +1,4 @@
-# System Monitor
+<h1 align="center">Dynamic System Moniter</h2>
 
 ## Overview
 The **System Monitor** is a real-time system monitoring application built using **C++ (Qt Framework)** with an interactive **HTML, CSS, and JavaScript** dashboard interface.  
@@ -41,53 +41,59 @@ The backend (C++/Qt) communicates with the frontend via **Qt WebEngine** and **Q
 
 ## Project Structure
 
-System-Monitor/
-│
-├── system-monitor.pro # Qt project configuration
-├── README.md # Project documentation
-│
-├── src/ # Backend source files
-│ └── sm.cpp # Main backend logic
-│
-├── web/ # Frontend assets
-│ ├── dashboard.html # HTML dashboard UI
-│ ├── style.css # Styling file
-│ └── script.js # JavaScript for data updates and visualization
-│
-└── assets/ # Images and icons
-└── dashboard.png # Project screenshot
+| **Directory / File**        | **Description** |
+|-----------------------------|-----------------|
+| `System-Monitor/`           | Root project directory containing all source and resource files. |
+| `system-monitor.pro`        | Qt project configuration file used by `qmake` for building the application. |
+| `README.md`                 | Project documentation file explaining setup, usage, and features. |
+| `src/`                      | Contains the backend source code implemented in C++ using Qt. |
+| `src/sm.cpp`                | Main C++ source file responsible for system data retrieval, process management, and Qt–Web communication. |
+| `web/`                      | Frontend files that define the dashboard interface and visual components. |
+| `web/dashboard.html`        | HTML layout for the real-time monitoring dashboard. |
+| `web/style.css`             | CSS file for styling the user interface. |
+| `web/script.js`             | JavaScript file for dynamic updates and Chart.js visualizations. |
+| `assets/`                   | Folder containing images, icons, and other project-related resources. |
+| `assets/dashboard.png`      | Screenshot of the running System Monitor dashboard. |
+
+
+
+### Summary
+- **Backend:** C++ (Qt Framework) — handles system data collection and process management.  
+- **Frontend:** HTML, CSS, JavaScript — provides an interactive dashboard for visualization.  
+- **Integration:** Uses Qt WebEngine and WebChannel for communication between C++ and the web interface.
 
 ---
 
 ## Dependencies
-
 Before building, ensure you have the following installed:
-
-## On Ubuntu / Debian:
+### On Ubuntu / Debian:
 bash
 sudo apt update
 sudo apt install build-essential qtbase5-dev qtwebengine5-dev libqt5webchannel5-dev qt5-qmake -y
 sudo dnf install qt5-qtbase-devel qt5-qtwebengine-devel qt5-qtwebchannel-devel
 sudo pacman -S qt5-base qt5-webengine qt5-webchannel
 
+---
 
 ## Build and Run Instructions
 Clone the repository
 git clone https://github.com/taufeeq-devt/System-Moniter.git
 cd System-Moniter
 
-# Generate Makefile using qmake
+### Generate Makefile using qmake
 qmake system-monitor.pro
 
-# Compile the project
+### Compile the project
 make
 
-# Run the application
+### Run the application
 ./sm
 The application window will open with a live-updating dashboard showing CPU, memory, and process information.
 
+---
+
 ## Functional Overview
-Backend (src/sm.cpp)
+### Backend (src/sm.cpp)
 Collects system data through:
 
 /proc/stat for CPU usage
@@ -102,12 +108,16 @@ Provides this data to the frontend via Monitor (QObject) over a QWebChannel.
 
 Implements process termination using the SIGKILL signal.
 
-## Frontend (web/)
+---
+
+### Frontend (web/)
 Displays live charts and gauges using Chart.js.
 
 Dynamically updates data every few seconds using asynchronous JS calls.
 
 Includes a process table with inline “Kill” actions.
+
+---
 
 ## System Requirements
 Operating System: Linux (tested on Ubuntu 22.04)
@@ -119,6 +129,8 @@ C++ Standard: C++17 or later
 RAM: Minimum 1 GB
 
 Compiler: GCC or Clang
+
+---
 
 ## Future Enhancements
 Core-wise CPU and memory usage breakdown
@@ -132,3 +144,5 @@ Data export options (CSV / JSON)
 System alerts for high resource usage
 
 Push-based updates via Qt signals (instead of polling)
+
+---
