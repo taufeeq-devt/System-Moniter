@@ -57,15 +57,13 @@ System-Monitor/
 └── assets/ # Images and icons
 └── dashboard.png # Project screenshot
 
-
-
 ---
 
 ## Dependencies
 
 Before building, ensure you have the following installed:
 
-### On Ubuntu / Debian:
+## On Ubuntu / Debian:
 bash
 sudo apt update
 sudo apt install build-essential qtbase5-dev qtwebengine5-dev libqt5webchannel5-dev qt5-qmake -y
@@ -73,20 +71,22 @@ sudo dnf install qt5-qtbase-devel qt5-qtwebengine-devel qt5-qtwebchannel-devel
 sudo pacman -S qt5-base qt5-webengine qt5-webchannel
 
 
-###Build and Run Instructions
+## Build and Run Instructions
 Clone the repository
 git clone https://github.com/taufeeq-devt/System-Moniter.git
 cd System-Moniter
-#Generate Makefile using qmake
+
+# Generate Makefile using qmake
 qmake system-monitor.pro
-#Compile the project
+
+# Compile the project
 make
-#Run the application
+
+# Run the application
 ./sm
 The application window will open with a live-updating dashboard showing CPU, memory, and process information.
 
 ## Functional Overview
-
 Backend (src/sm.cpp)
 Collects system data through:
 
@@ -102,16 +102,14 @@ Provides this data to the frontend via Monitor (QObject) over a QWebChannel.
 
 Implements process termination using the SIGKILL signal.
 
-##Frontend (web/)
-
+## Frontend (web/)
 Displays live charts and gauges using Chart.js.
 
 Dynamically updates data every few seconds using asynchronous JS calls.
 
 Includes a process table with inline “Kill” actions.
 
-##System Requirements
-
+## System Requirements
 Operating System: Linux (tested on Ubuntu 22.04)
 
 Qt Version: 5.12+ or Qt 6 equivalent
@@ -122,8 +120,7 @@ RAM: Minimum 1 GB
 
 Compiler: GCC or Clang
 
-##Future Enhancements
-
+## Future Enhancements
 Core-wise CPU and memory usage breakdown
 
 Disk and network utilization graphs
