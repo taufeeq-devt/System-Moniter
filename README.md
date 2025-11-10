@@ -76,20 +76,21 @@ sudo pacman -S qt5-base qt5-webengine qt5-webchannel
 ---
 
 ## Build and Run Instructions
-Clone the repository
+```bash
+//Clone the repository:
 git clone https://github.com/taufeeq-devt/System-Moniter.git
 cd System-Moniter
 
-### Generate Makefile using qmake
+//Generate Makefile using qmake:
 qmake system-monitor.pro
 
-### Compile the project
+//Compile the project:
 make
 
-### Run the application
+//Run the application:
 ./sm
-The application window will open with a live-updating dashboard showing CPU, memory, and process information.
-
+//The application window will open with a live-updating dashboard showing CPU, memory, and process information.
+```
 ---
 
 ## Functional Overview
